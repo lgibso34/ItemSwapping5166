@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>My Cars</title>
+    <meta name="description" content="My Cars" />
+	<meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../css/master.css" />
+    <link rel="stylesheet" type="text/css" href="../css/myItems.css" />
+
+    
+
+</head>
+
+<body>
+    <header class="banner">
+        <% include partials/header.ejs %>
+    </header>
+    
+    <% include partials/user-navigation.ejs %>
+	
+    <main>
+        <% include partials/site-navigation.ejs %>
+
+        <div id="bread">
+                <ul>
+                    <li><a href="/index">Home</a></li>
+                    <li>></li>
+                    <li><a href="/myItems">My Cars</a></li>
+                </ul>
+        </div>
+
+        <%# var username = signed in user%>
+
+        <h1> <%= email %> Current Cars</h1>
+
+        
+
+    <div id="cars">        
+           
+        <table style="width:60%">
+                <tr class="bottom">
+                  <th>Vehicle</th>
+                  <th>Category</th> 
+                  <th>Date Aquired</th>
+                  <th>Overall Rating</th>
+                  <th>Rate</th>
+                  <th>Status</th>
+                  <th></th>
+                  <th></th>
+                </tr>
+                
+                <% if(typeof message !== "undefined"){%>
+                    <p><%= message %></p>
+                <%}else{%>
+
+                <% 
+                    var counter = 1;
+                    if(userCars.length === 1){
+                        var item = userCars[0];
+                        %>
+                        
+                        <tr>
+
+                            <td>
+                              <% var href="/item?itemCode=" + item.itemCode %>
+                              <a href="<%= href %>">
+                                  <%= item.yearModel + " "  + item.catalogCategory + " "+ item.itemName %>
+                              </a> 
+                            </td>
+                            <td><%= item.catalogCategory %></td>
+                            <td>July 9, 2018</td>
+                            <td><%= item.rating.ratingTotal / item.rating.ratingCount %></td>
+                            <td>
+                                <form action="/rateItem">
+                                    <input type="hidden" name="itemCode" value="<%= item.itemCode %>" />
+                                    <button type="submit" name="action" value="rate">Rate Item</button>
+                                </form>
+                            </td>
+                            <%                  
+                             var options = "option" + counter; 
+                             counter++;
+                             %>
+                            <td><%= item.status %></td>
+                          </tr>
+                             
+          
+                             
+                            
+                          <tr class="bottom">                    
+                              <td class="submitTable">                        
+                                  <form action="/profile">
+                                      <input type="hidden" name="theItem" value="<%= item.itemCode %>" />
+                                      <button type="submit" name="action" value="update">Update</button>
+                                   </form>
+                              </td>
+          
+                              <td>
+                                      <form action="/profile">
+                                          <input type="hidden" name="theItem" value="<%= item.itemCode %>" />
+                                          <button type="submit" name="action" value="delete">DELETE</button>
+                                      </form>
+                              </td>
+                             
+                          </tr>
+                <%
+                    }else{
+
+                    userCars.forEach(function(item){
+                %>
+                <tr>
+
+                  <td>
+                    <% var href="/item?itemCode=" + item.itemCode %>
+                    <a href="<%= href %>">
+                        <%= item.yearModel + " "  + item.catalogCategory + " "+ item.itemName %>
+                    </a> 
+                  </td>
+                  <td><%= item.catalogCategory %></td>
+                  <td>July 9, 2018</td>
+                  <td><%= item.rating.ratingTotal / item.rating.ratingCount %></td>
+                  <td>
+                    <form action="/rateItem">
+                        <input type="hidden" name="itemCode" value="<%= item.itemCode %>" />
+                        <button type="submit" name="action" value="rate">Rate Item</button>
+                    </form>
+                </td>
+                  <%                  
+                   var options = "option" + counter; 
+                   counter++;
+                   %>
+                  <td><%= item.status %></td>
+                </tr>
+                   
+
+                   
+                  
+                <tr class="bottom">                    
+                    <td colspan="6" class="submitTable">                        
+                        <form action="/profile">
+                            <input type="hidden" name="theItem" value="<%= item.itemCode %>" />
+                            <button type="submit" name="action" value="update">Update</button>
+                         </form>
+                    </td>
+
+                    <td>
+                            <form action="/profile">
+                                <input type="hidden" name="theItem" value="<%= item.itemCode %>" />
+                                <button type="submit" name="action" value="delete">DELETE</button>
+                            </form>
+                    </td>
+                </tr>
+                <% }); %>
+
+                   <% }} %>
+
+
+        </table>
+        
+        
+        
+
+
+    </div>
+		
+    </main>
+	
+	<footer id="Validation">
+        <% include partials/footer.ejs %>
+	</footer>
+    
+</body>
+</html>

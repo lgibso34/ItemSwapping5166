@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>TEST</title>
+    <meta name="description" content="carSwap" />
+	<meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="index.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- <script type="text/javascript" src="/javascript/message.js"></script> -->
+	
+
+</head>
+
+<body>
+    <header class="banner">
+        <!-- banner stuff -->
+    </header>
+
+
+	
+    <main>
+		<h1 id="title">Welcome to the Test Database! Use this page to pass objects and test your code.</h1>
+        <br>
+
+        <% if(typeof test == "undefined"){}else{  %>
+
+            
+            <p>The object passed to this page is: </p><br>
+                <%
+                var hello = Object.keys(test);
+                %>
+
+            
+            <br>
+            <%= test.yearModel + " " + test.itemName + ' ' + test.catalogCategory %>
+            <br>
+            <%= test[0].itemName %>
+            <%= hello %>
+            <br><br><br>
+
+
+        <% } %>
+        
+       
+        
+    </main>
+	
+	<footer id="Validation" class="clear">
+        <p>TEST &copy;</p>
+		<a href="https://validator.w3.org/" target="_blank">Validate HTML</a> 
+		<a href="https://jigsaw.w3.org/css-validator/check/referer" target="_blank">Validate CSS</a>
+	</footer>
+    
+</body>
+</html>

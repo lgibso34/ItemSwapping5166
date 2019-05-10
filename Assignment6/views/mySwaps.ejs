@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>My Swaps</title>
+    <meta name="description" content="My Swaps" />
+	<meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../css/master.css" />
+    <link rel="stylesheet" type="text/css" href="../css/mySwaps.css" />
+
+    
+
+</head>
+
+<body>
+    <header class="banner">
+        <% include partials/header.ejs %>
+    </header>
+    
+    <% include partials/user-navigation.ejs %>
+	
+    <main>
+        <% include partials/site-navigation.ejs %>
+
+        <div id="bread">
+                <ul>
+                    <li><a href="/index">Home</a></li>
+                    <li>></li>
+                    <li><a href="/myItems">My Cars</a></li>
+                </ul>
+        </div>
+
+        <%# var username = signed in user%>
+
+        <h1><%= email %> swap offers</h1>
+
+        
+
+        <div id="cars">        
+            <%# This form doesnt do anything special at the moment %>
+       
+        
+
+            <% if(typeof message !== "undefined"){%>
+                <h2><%= message %></h2>
+            <%}else{%>
+        <table style="width:40%">
+
+                <tr class="bottom">
+                  <th>Your Vehicle</th>
+                  <th>Swap Offer</th>
+                </tr>
+
+     
+                <% 
+                    var counter = 0;
+                    userCars.forEach(function(item){
+                %>
+                <tr>
+
+                <td>
+                    <% var href="/item?itemCode=" + item.itemCode %>
+                    <a href="<%= href %>">  <%= item.yearModel + " "  + item.catalogCategory + " "+ item.itemName %> </a>
+                </td>
+                  
+                <td>
+                        <% var href="/item?itemCode=" + swapItems[counter].itemCode %>
+                        <a href="<%= href %>"> <%= swapItems[counter].yearModel + " " +  swapItems[counter].catalogCategory + " " + swapItems[counter].itemName %> </a>
+                
+                </td>
+                  
+                  <td>
+                        <form action="/profile">
+                           <input type="hidden" name="theItem" value="<%= item.itemCode %>" />
+                           <input type="hidden" name="withdrawItem" value="<%= swapItems[counter].itemCode %>" />
+            
+                            <%if(initiatorID === userID){ %>
+                                <button type="submit" name="action" value="withdraw">Withdraw</button>
+                            <% }else{ %>
+                                <button type="submit" name="action" value="accept">Accept</button>
+                                <input type="hidden" name="decline" value="decline" />
+                                <button type="submit" name="action" value="withdraw">Decline</button>
+                            <% } %>
+                        </form>
+                     </td>
+                  
+                     <% counter++; %>
+
+                </tr>
+                   <% }); %>
+
+                   
+                  
+                <tr class="bottom">
+                    <td ></td>                    
+                </tr>
+
+            </table>
+                <% } %>
+
+       
+            
+    </div>
+		
+    </main>
+	
+	<footer id="Validation">
+        <% include partials/footer.ejs %>
+	</footer>
+    
+</body>
+</html>

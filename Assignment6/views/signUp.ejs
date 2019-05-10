@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Sign Up</title>
+    <meta name="description" content="Sign Up" />
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../css/master.css" />
+    <link rel="stylesheet" type="text/css" href="../css/signUp.css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../javascript/signUp.js"></script>
+
+</head>
+
+<body>
+    <header class="banner">
+        <% include partials/header.ejs %>
+    </header>
+    
+    <% include partials/user-navigation.ejs %>
+	
+    <main>
+        <% include partials/site-navigation.ejs %>
+
+        <div id="bread">
+                <ul>
+                    <li><a href="/index">Home</a></li>
+                    <li>></li>
+                    <li><a href="/signUp">Sign Up</a></li>
+                </ul>
+        </div>
+
+        <h2 id="title">Sign Up</h2>
+        <br>
+
+
+        <form id="signUpForm" action="/signUp" method="POST">
+
+            <input type="email" id="username" name="username" placeholder="Email Address" required/>
+            <span class="red-text">&nbsp;*</span>
+            <br>   <br>
+            <input type="password" id="pass" name="password" minlength="3" placeholder="Password" required/>
+            <span class="red-text">&nbsp;*</span>
+            <br>   <br>
+            <input type="password" id="passConfirm" name='passConfirm' minlength="8" placeholder="Confirm Password" required/>
+            <span class="red-text">&nbsp;*</span>
+            <br>   <br>
+            <input type="text" id="firstName" name="firstName" placeholder="First Name" required/>
+            <span class="red-text">&nbsp;*</span>
+            <br>   <br>
+            <input type="text" id="lastName" name="lastName" placeholder="Last Name" required/>
+            <span class="red-text">&nbsp;*</span>
+            <br>   <br>
+            <input type="text" id="address" name="address" placeholder="Address" required/>
+            <span class="red-text">&nbsp;*</span>
+            <br>   <br>
+            <input type="text" id="city" name="city" placeholder="City" required/>
+            <span class="red-text">&nbsp;*</span>
+            <br>   <br>
+            <input type="text" id="state" name="state" placeholder="State" required/>
+            <span class="red-text">&nbsp;*</span>
+            <br>   <br>
+            <input type="text" id="zip" name="zip" placeholder="Zip Code" required/>
+            <span class="red-text">&nbsp;*</span>
+            <br>   <br>
+            <input type="text" id="country" name="country" placeholder="Country" required/>
+            <span class="red-text">&nbsp;*</span>
+            <br>   <br>
+            <input type="button" id="submitSignUp" value="Submit"/>
+
+        </form>
+        
+		
+    </main>
+	
+	<footer id="Validation">
+        <% include partials/footer.ejs %>
+	</footer>
+    
+</body>
+</html>

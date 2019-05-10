@@ -1,0 +1,13 @@
+#cart li{
+    font-size: 14px;   
+    font-weight: bold;
+    padding: 6px;
+    margin-top: 5px;
+    list-style: none;
+    display: inline;
+}
+
+#cart a{
+    text-decoration: none;
+    color: black;
+}

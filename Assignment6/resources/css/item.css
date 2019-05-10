@@ -1,0 +1,48 @@
+#pic{
+    max-width: 500px;
+    width: auto;
+    height: auto;
+    float: left;
+}
+
+#info{
+    margin-left: 220px;
+}
+
+.inline{
+    display:inline;
+}
+
+
+.btn-link{
+    border:none;
+    outline:none;
+    background:none;
+    cursor:pointer;
+    color:black;
+    padding:0;
+    text-decoration:none;
+    font-family:inherit;
+    font-size:inherit;
+}
+
+.clearfix::after {
+        content: "";
+        clear: both;
+        display: table;
+}
+
+#pictureContent p, #pictureContent input{
+    position: relative;
+    left: 25px;
+}
+
+#message{
+    font-size: 36px;
+    color: red;
+}
+
+#itemStatus{
+    font-size: 20px;
+    color: blue;
+}

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Subscribe</title>
+    <meta name="description" content="Subscribe" />
+	<meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../css/master.css" />
+    <link rel="stylesheet" type="text/css" href="../css/subscribe.css" />
+	
+
+</head>
+
+<body>
+        <header class="banner">
+            <% include partials/header.ejs %>
+        </header>
+
+        <% include partials/user-navigation.ejs %>
+	
+    <main>
+        <% include partials/site-navigation.ejs %>
+
+        <div id="bread">
+        <ul>
+            <li><a href="/index">Home</a></li>
+            <li>></li>
+            <li><a href="/subscribe">Subscribe</a></li>
+        </ul>
+        </div>
+
+        <p id="title">Pay a high monthly payment to drive any car you want!</p>
+        <button type="button" id="sub">Subscribe</button>
+        <P>If the button is pressed and status is not set to signed in, then redirect to the sign in page.</P>
+        <br>
+        
+		
+    </main>
+	
+	<footer id="Validation">
+        <% include partials/footer.ejs %>
+	</footer>
+    
+</body>
+</html>

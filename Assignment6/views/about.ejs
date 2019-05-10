@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>About</title>
+    <meta name="description" content="About" />
+	<meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../css/master.css" />
+    <link rel="stylesheet" type="text/css" href="../css/about.css" />
+	
+    
+
+</head>
+
+<body>
+        <header class="banner">
+            <% include partials/header.ejs %>
+        </header>
+
+        <% include partials/user-navigation.ejs %>
+	
+    <main>
+        <% include partials/site-navigation.ejs %>
+
+        <div id="bread">
+        <ul>
+            <li><a href="/index">Home</a></li>
+            <li>></li>
+            <li><a href="/about">About</a></li>
+        </ul>
+        </div>
+
+		<h1 id="title">About CarSwap</h1>
+        <br>
+        <p id="about">CarSwap is a business started by Logan Gibson. He had the vision that common people would have the ability to drive the cars 
+            that rich people drive without being having to commit to the expensive purchase. CarSwap is a monthly subscription-based 
+            company. Pay monthly to drive any car you want. The monthly payment includes the required insurance. Details about the 
+            terms and conditions can be viewed on the <a href="/subscribe">subscribe</a> page.
+        </p>
+        
+		
+    </main>
+	
+	<footer id="Validation">
+        <% include partials/footer.ejs %>
+	</footer>
+    
+</body>
+</html>

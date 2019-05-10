@@ -1,0 +1,21 @@
+th{
+    text-align: left;
+}
+
+table{
+    border-collapse: collapse;
+}
+
+.bottom{
+    border-bottom: 1px solid black;
+}
+
+td a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+td a:hover{
+    text-decoration: underline;
+}

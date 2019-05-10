@@ -1,0 +1,10 @@
+#title{
+    color: black;
+}
+
+#message{
+    text-align: center;
+    font-size: 26px;
+    background-color: black;
+    color: red;
+}

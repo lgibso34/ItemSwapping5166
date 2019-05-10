@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title><%= car.itemName %></title>
+    <meta name="description" content="carSwap" />
+	<meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../css/master.css" />
+    <link rel="stylesheet" type="text/css" href="../css/item.css" />   
+</head>
+
+<body>
+        <header class="banner">
+            <% include partials/header.ejs %>
+        </header>
+
+        <% include partials/user-navigation.ejs %>
+	
+    <main>
+        <% include partials/site-navigation.ejs %>
+
+        <div id="bread">
+        <ul>
+            <li><a href="/index">Home</a></li>
+            <li>></li>
+            <li><a href="/categories">Categories</a></li>
+            <li>></li>
+            <li>   
+            <% var href="/item?itemCode=" + car.itemCode %>
+            <a href="<%= href %>">
+                <%= car.itemName %>
+            </a>        
+            </li>   
+        </ul>
+        </div>
+
+
+        <div id="info">
+                <form action="/categories">
+                        <input type="submit" value="Back to Car List"/>
+                </form>
+
+        <h1>Car information</h1>
+
+        <% if(typeof message !== "undefined"){%>
+            <p id="message"><%= message %></p>
+        <%}%>
+
+        <br>
+         <br>
+         <div id="pictureContent" class="clearfix">
+        <h2><strong>Car Name: </strong><%= car.itemName %></h2>
+
+        <img id="pic" src="<%= car.imageURL %>" alt="img.jpg">
+        <p><%= car.description %></p>
+        <p>MORE Description</p>
+
+
+
+
+
+        <% if(typeof itemStatus !== "undefined"){ %>          
+            <p id="itemStatus">Status: <%= itemStatus %></p>
+
+          <%  if(typeof itemCount !== "undefined" && itemCount < 3){ %>
+                <form action="/additem" method="POST">
+                    <input type="hidden" name="theItem" value="<%= car.itemCode %>"/>
+                    <button type="submit" name="action" value="add">Add Item to Inventory</button>
+                </form>
+            <% }
+
+
+             if(itemStatus === "You have a swap offer for this item."){ %>
+                <form action="/mySwaps">
+                    <input type="submit" value="See the offer"/>
+                </form>
+
+            <% } %>
+
+       <% } %>
+        </div>
+        <%  if(typeof itemCount !== "undefined"){ %>
+        <form action="/profile">
+            <input type="hidden" name="theItem" value="<%= car.itemCode %>"/>
+            <button type="submit" name="action" value="offer">Swap It</button>
+        </form>
+        <% } %>
+        <% if(email != "Not signed in."){ %> 
+        
+        
+       
+        <form action="/cart">            
+            <input type="submit" value="Add to Cart" />
+        </form>
+        <% }%>
+        <br>
+         </div>
+        
+		
+    </main>
+	
+	<footer id="Validation">
+        <% include partials/footer.ejs %>
+	</footer>
+    
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>CarSwap</title>
+    <meta name="description" content="carSwap" />
+	<meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/css/master.css" />
+    <link rel="stylesheet" type="text/css" href="/css/index.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/javascript/message.js"></script>
+	
+
+</head>
+
+<body>
+    <header class="banner">
+        <% include partials/header.ejs %>
+    </header>
+
+
+
+
+    <% if(typeof message !== "undefined"){%>
+
+    <p id="message"><%= message %></p>
+    <%}%>
+
+
+    
+
+    <% include partials/user-navigation.ejs %>
+	
+    <main>
+        <% include partials/site-navigation.ejs %>
+
+        <div id="bread">
+        <ul>
+            <li><a href="/index">Home</a></li>
+        </ul>
+        </div>
+
+		<p id="title">Welcome to CarSwap. Pay a high monthly payment to drive any car you want!</p>
+        <br>
+        
+    </main>
+	
+	<footer id="Validation">
+        <% include partials/footer.ejs %>
+	</footer>
+    
+</body>
+</html>

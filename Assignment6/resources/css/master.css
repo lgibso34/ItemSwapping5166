@@ -1,0 +1,170 @@
+
+.pics {
+    display: block;
+}
+
+/*by setting these ourselves, we don't have to rely on different browsers
+using different default values*/
+html, body, h1, h2, h3, ul, li, a, p, article, aside,
+footer, header, main, nav, section, div {
+    padding: 0;
+    margin: 0;
+}
+
+.banner{
+    background-color: #a2a6ac;
+    color: white;
+    padding: 20px 20px;   
+}
+
+.banner h1{
+    display: inline;
+    text-align: center;
+}
+
+.banner #logo{
+    padding: 10px;
+}
+
+
+.banner h1 a{
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+}
+
+.banner h1{
+    margin-left: 1.5em;
+}
+
+.banner #status, .banner input{
+    float: right;
+}
+
+body {
+    
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #f0f0f0;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 15px;
+}
+
+nav {
+    background-color: #3986c5;
+    padding: 5px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+li a {
+    color: white;
+}
+
+nav li {
+    display: inline;
+    margin-left: 15px;
+    margin-right:15px;
+    font-size: 20px;
+    /*font-variant: small-caps;*/
+    font-weight: bold;
+}
+
+nav li:hover, nav li:focus{
+    background-color: #2b6696;
+}
+
+.btn-link-signin{
+    display: inline-block;
+    border:none;
+    outline:none;
+    background:none;
+    cursor:pointer;
+    color:white;
+    padding:0;
+    text-decoration: underline;
+    font-family:inherit;
+    font-size:20px;
+    font-weight: bold;
+  }
+
+  .btn-link-signin:hover, .btn-link-signin:focus{
+    background-color: #2b6696;
+  }
+
+  nav form{
+      display: inline;
+  }
+
+.naviback a{
+    text-decoration: none;
+}
+
+.naviback{
+    width: 185px;
+    background-color: #a2a6ac;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    float: left;
+    padding: 8px;
+}
+
+.naviback li a:hover{
+    text-decoration: underline;
+}
+
+.navi {    
+    font-size: 20px;   
+    font-weight: bold;
+    padding: 6px;
+    margin-top: 5px;
+    background-color: #3986c5;
+    list-style: none;   
+    position: relative; 
+    height: 16px;
+}
+
+.navi a{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin-left: 7px;
+}
+
+.navi:hover, .navi:focus{
+    background-color: #2b6696;
+}
+
+#bread li{
+    font-size: 14px;   
+    font-weight: bold;
+    padding: 6px;
+    margin-top: 5px;
+    list-style: none;
+    display: inline;
+}
+
+#bread a{
+    text-decoration: none;
+    color: black;
+}
+
+div, #name, #title {
+    margin-top: 5px;
+}
+
+footer {
+    clear: both;
+    background-color: #3986c5;
+    padding: 5px;
+    margin-top: 1px;
+    
+}
+
+footer a {
+    color: white;
+}
+

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Sign In</title>
+    <meta name="description" content="Sign In" />
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../css/master.css" />
+    <link rel="stylesheet" type="text/css" href="../css/signIn.css" />
+	
+
+   
+</head>
+
+<body>
+    <header class="banner">
+            <% include partials/header.ejs %>
+    </header>
+    
+    <% include partials/user-navigation.ejs %>
+	
+    <main>
+        <% include partials/site-navigation.ejs %>
+
+        <div id="bread">
+                <ul>
+                    <li><a href="/index">Home</a></li>
+                    <li>></li>
+                    <li><a href="/login">Sign In</a></li>
+                </ul>
+        </div>
+
+        <h2 id="title">Sign In</h2>
+
+        <br>
+        <% if(typeof message !== "undefined"){ %>
+            <h2 style="color:red"> <%=  message %> </h2>
+        <% } %>
+        <br>
+        <form id="signInForm" action='/profile' method='POST'>
+            <input type="email" id="username" name='username' placeholder="Email Address"/>
+            <br>   <br>
+            <input type="password" id="pass" name='pass' placeholder="Password"/>
+            <br><br>
+            <a id="dont" href="signUp">Don't have an account? Sign up</a>
+            <br><br>
+            <input type="hidden" id="action" name='action' value='signin'/>
+            <input type="submit" id="submit" value="Sign In"/>
+        </form>
+	
+    </main>
+	
+	<footer id="Validation">
+            <% include partials/footer.ejs %>
+	</footer>
+    
+</body>
+</html>

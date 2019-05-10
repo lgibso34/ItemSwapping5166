@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Cart</title>
+    <meta name="description" content="Cart" />
+	<meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../css/master.css" />
+    <link rel="stylesheet" type="text/css" href="../css/cart.css" />
+	
+    
+</head>
+
+<body>
+    <header class="banner">
+        <% include partials/header.ejs %>
+    </header>
+    
+    <% include partials/user-navigation.ejs %>
+	
+    <main>
+        <% include partials/site-navigation.ejs %>
+
+        <div id="bread">
+                <ul>
+                    <li><a href="/index">Home</a></li>
+                    <li>></li>
+                    <li><a href="/cart">Cart</a></li>
+                </ul>
+        </div>
+
+      
+        <p>Show list of cars added to cart</p>
+
+        <ul id="cart">
+                <li><p>Item 1:</p></li>
+                <li><p>Item 2:</p></li>
+                <li><p>Item 3:</p></li>
+        </ul>
+		
+    </main>
+	
+	<footer id="Validation">
+        <% include partials/footer.ejs %>
+	</footer>
+    
+</body>
+</html>

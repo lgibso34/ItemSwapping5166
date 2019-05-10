@@ -1,0 +1,9 @@
+            <a href="index"><img id="logo" src="../images/carswaplogo.png" alt="carSwap.jpg" height=35 width=140></a>
+            <h1><a href="index">Welcome to CarSwap</a></h1>
+
+            <% if(typeof email === "undefined" || email == "Not signed in.") { %>
+            
+            <span id="status">Not signed in.</span>
+            <% }else{ %>
+            <span id="status">Signed in as <%= email %></span>
+            <% } %>

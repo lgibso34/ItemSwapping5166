@@ -1,0 +1,79 @@
+.pics {
+    display: block;
+}
+
+/*by setting these ourselves, we don't have to rely on different browsers
+using different default values*/
+html, body, h1, h2, h3, ul, li, a, p, article, aside,
+footer, header, main, nav, section, div {
+    padding: 0;
+    margin: 0;
+}
+
+.banner{
+    background-color: #11233b;
+    color: white;
+    padding: 20px 20px;
+}
+
+body {
+    width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #f0f0f0;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 15px;
+}
+
+.banner a{
+    text-decoration: none;
+    color: white;
+    padding: 10px;    
+}
+
+nav {
+    background-color: #20416c;
+    padding: 5px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+li a {
+    color: white;
+}
+
+nav li {
+    display: inline;
+    margin-left: 15px;
+    margin-right:15px;
+    font-size: 20px;
+    /*font-variant: small-caps;*/
+    font-weight: bold;
+}
+
+
+
+
+div, #name, #title {
+    margin-top: 5px;
+}
+
+main {
+    width: 1400px;
+}
+
+main input{
+    display: inline;
+}
+
+
+footer {
+    clear: both;
+    background-color: #20416c;
+    padding: 5px;
+    margin-top: 1px;
+}
+
+footer a {
+    color: white;
+}
